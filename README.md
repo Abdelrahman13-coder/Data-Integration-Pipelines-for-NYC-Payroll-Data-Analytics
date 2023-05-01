@@ -17,9 +17,9 @@ The sources data resides in Azure Data Lake and needs to be processed in a NYC d
 2. **Create an Azure Data Factory Resource**
 3. **Create a SQL Database to store the current year of the payroll data**
 
-* Add Client IP address to the SQL DB firewall
+    * Add Client IP address to the SQL DB firewall
 
-* Create a table called **NYC_Payroll_Data** in **db_nycpayroll** in the Azure Query Editor with the SQL Script:
+    * Create a table called **NYC_Payroll_Data** in **db_nycpayroll** in the Azure Query Editor with the SQL Script:
 
 ``` tsql
 CREATE TABLE [dbo].[NYC_Payroll_Data](
@@ -119,7 +119,6 @@ GO
 ```
 
 * Create Payroll transaction data table:
-
 ``` tsql
 CREATE TABLE [dbo].[NYC_Payroll_Data](
     [FiscalYear] [int] NULL,
