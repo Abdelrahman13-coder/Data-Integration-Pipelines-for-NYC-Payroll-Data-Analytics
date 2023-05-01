@@ -160,8 +160,7 @@ GO
 ## **Step 2:** Create Linked Services
 
 1. **Create a Linked Service for Azure Data Lake
-In Azure Data Factory, create a linked service to the data lake that contains the data files
-
+In Azure Data Factory, create a linked service to the data lake that contains the data files**
     * From the data stores, select Azure Data Lake Gen2
     * Test the connection
     
