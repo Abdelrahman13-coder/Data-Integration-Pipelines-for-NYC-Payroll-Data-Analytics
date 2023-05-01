@@ -88,7 +88,7 @@ WITH (
 GO
 ```
 
-** We are assuming the data will be stored in the `payroll_emp_md.csv` file in the blob storage. Also, change the `DATA_SOURCE` value, as applicable to you.**
+**We are assuming the data will be stored in the `payroll_emp_md.csv` file in the blob storage. Also, change the `DATA_SOURCE` value, as applicable to you.**
 
 * Create Job Title Table:
 ``` tsql
