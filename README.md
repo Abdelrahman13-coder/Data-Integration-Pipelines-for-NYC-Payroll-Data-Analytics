@@ -62,7 +62,6 @@ GO
 ```
 
 * Define the data source to persist the results.
-
 ``` tsql
 -- Storage path where the result set will persist
 IF NOT EXISTS (SELECT * FROM sys.external_data_sources WHERE name = 'mydlsfs20230413_mydls20230413_dfs_core_windows_net') 
@@ -72,6 +71,8 @@ IF NOT EXISTS (SELECT * FROM sys.external_data_sources WHERE name = 'mydlsfs2023
     )
 GO
 ```
+
+**Use the blob storage account name as applicable to you.** In the snippet above, `mydls20230413` is the Data Lake Gen 2 storage name, and `mydlsfs20230413` si the name fo the file system (container).
 
 * Create Employee Master Data table:
 ``` tsql
