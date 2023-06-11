@@ -200,4 +200,5 @@ In Azure Data Factory, create a linked service to the data lake that contains th
 
 6. **Trigger and monitor the Pipelines**
     * Take a screenshot of each pipeline run after it has finished, or one after your master pipeline run has finished.
+    
     In total, you should have 6 pipelines or on master pipeline
