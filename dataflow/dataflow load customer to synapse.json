@@ -1,0 +1,96 @@
+{
+	"name": "dataflow load customer to synapse",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_sqldb_customer",
+						"type": "DatasetReference"
+					},
+					"name": "sourcetablecustomer"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ds_synapse_customer",
+						"type": "DatasetReference"
+					},
+					"name": "destinationcustomer"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          CustomerID as integer,",
+				"          NameStyle as boolean,",
+				"          Title as string,",
+				"          FirstName as string,",
+				"          MiddleName as string,",
+				"          LastName as string,",
+				"          Suffix as string,",
+				"          CompanyName as string,",
+				"          SalesPerson as string,",
+				"          EmailAddress as string,",
+				"          Phone as string,",
+				"          PasswordHash as string,",
+				"          PasswordSalt as string,",
+				"          rowguid as string,",
+				"          ModifiedDate as timestamp",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> sourcetablecustomer",
+				"sourcetablecustomer sink(allowSchemaDrift: true,",
+				"     validateSchema: true,",
+				"     input(",
+				"          CustomerID as integer,",
+				"          NameStyle as boolean,",
+				"          Title as string,",
+				"          FirstName as string,",
+				"          MiddleName as string,",
+				"          LastName as string,",
+				"          Suffix as string,",
+				"          CompanyName as string,",
+				"          SalesPerson as string,",
+				"          EmailAddress as string,",
+				"          Phone as string,",
+				"          PasswordHash as string,",
+				"          PasswordSalt as string,",
+				"          rowguid as string,",
+				"          ModifiedDate as timestamp",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     staged: true,",
+				"     allowCopyCommand: true,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          CustomerID,",
+				"          NameStyle,",
+				"          Title,",
+				"          FirstName,",
+				"          MiddleName,",
+				"          LastName,",
+				"          Suffix,",
+				"          CompanyName,",
+				"          SalesPerson,",
+				"          EmailAddress,",
+				"          Phone,",
+				"          PasswordHash,",
+				"          PasswordSalt,",
+				"          rowguid,",
+				"          ModifiedDate",
+				"     )) ~> destinationcustomer"
+			]
+		}
+	}
+}
