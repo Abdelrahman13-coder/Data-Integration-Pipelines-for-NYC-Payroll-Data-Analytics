@@ -1,4 +1,4 @@
-## **Step 2:** Create Datasets in Azure Data Factory 
+## **Step 3:** Create Datasets in Azure Data Factory 
 
 1. **Create the datasets for the 2021 Payroll file on Azure Data Lake Gen2**
     * Select DelimitedText
