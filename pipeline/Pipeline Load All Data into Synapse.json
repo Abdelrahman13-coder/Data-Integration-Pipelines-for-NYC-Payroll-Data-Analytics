@@ -1,0 +1,6 @@
+{
+	"name": "Pipeline Load All Data into Synapse",
+	"properties": {
+		"annotations": []
+	}
+}

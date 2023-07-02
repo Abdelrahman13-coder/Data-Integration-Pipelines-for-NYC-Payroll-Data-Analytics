@@ -1,5 +1,5 @@
 {
-	"name": "Pipeline Load 2021 Payroll into SQLDB",
+	"name": "Pipeline Employee Master to Synapse",
 	"properties": {
 		"activities": [
 			{
@@ -16,8 +16,15 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "dataflow_2021Payroll",
+						"referenceName": "dataflow Employee",
 						"type": "DataFlowReference"
+					},
+					"staging": {
+						"linkedService": {
+							"referenceName": "ls_AzureDataLakeStorage",
+							"type": "LinkedServiceReference"
+						},
+						"folderPath": "dirstaging"
 					},
 					"compute": {
 						"coreCount": 8,
