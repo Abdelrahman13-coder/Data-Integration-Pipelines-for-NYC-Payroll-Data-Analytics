@@ -18,7 +18,11 @@
 						"referenceName": "ds_NYC_Payoll_Data",
 						"type": "DatasetReference"
 					},
-					"name": "sinkSynapse"
+					"name": "sinkSynapse",
+					"rejectedDataLinkedService": {
+						"referenceName": "ls_AzureDataLakeStorage",
+						"type": "LinkedServiceReference"
+					}
 				}
 			],
 			"transformations": [],
