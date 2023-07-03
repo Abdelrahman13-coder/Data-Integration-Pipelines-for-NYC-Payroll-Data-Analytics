@@ -32,3 +32,6 @@
     * Take a screenshot of each pipeline run after it has finished, or one after your master pipeline run has finished.
     
     In total, you should have 6 pipelines or on master pipeline
+
+[Please create a master key in the database or open the master key in the session before performing this operation.](https://knowledge.udacity.com/questions/903084#:~:text=Got%20it%20resolved%20by,DECRYPTION%20BY%20PASSWORD%20%3D%20%27%3Cpassword%3E%27)
+
