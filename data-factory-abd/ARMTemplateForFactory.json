@@ -1709,7 +1709,11 @@
 								"referenceName": "ds_NYC_Payoll_Data",
 								"type": "DatasetReference"
 							},
-							"name": "sinkSynapse"
+							"name": "sinkSynapse",
+							"rejectedDataLinkedService": {
+								"referenceName": "ls_AzureDataLakeStorage",
+								"type": "LinkedServiceReference"
+							}
 						}
 					],
 					"transformations": [],
@@ -1776,7 +1780,8 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/ds_NYCPayroll_SQLdb')]",
-				"[concat(variables('factoryId'), '/datasets/ds_NYC_Payoll_Data')]"
+				"[concat(variables('factoryId'), '/datasets/ds_NYC_Payoll_Data')]",
+				"[concat(variables('factoryId'), '/linkedServices/ls_AzureDataLakeStorage')]"
 			]
 		},
 		{
