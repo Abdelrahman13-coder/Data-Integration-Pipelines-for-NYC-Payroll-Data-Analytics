@@ -955,9 +955,9 @@
 								},
 								"folderPath": "dirstaging"
 							},
-							"compute": {
-								"coreCount": 8,
-								"computeType": "General"
+							"integrationRuntime": {
+								"referenceName": "IRWestUS",
+								"type": "IntegrationRuntimeReference"
 							},
 							"traceLevel": "Fine"
 						}

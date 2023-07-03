@@ -226,9 +226,9 @@
 								},
 								"folderPath": "dirstaging"
 							},
-							"compute": {
-								"coreCount": 8,
-								"computeType": "General"
+							"integrationRuntime": {
+								"referenceName": "IRWestUS",
+								"type": "IntegrationRuntimeReference"
 							},
 							"traceLevel": "Fine"
 						}
@@ -242,7 +242,8 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/dataflows/dataflow load 2021 data from SQL DB to Synapse Analytics')]",
-				"[concat(variables('factoryId'), '/linkedServices/ls_AzureDataLakeStorage')]"
+				"[concat(variables('factoryId'), '/linkedServices/ls_AzureDataLakeStorage')]",
+				"[concat(variables('factoryId'), '/integrationRuntimes/IRWestUS')]"
 			]
 		},
 		{
