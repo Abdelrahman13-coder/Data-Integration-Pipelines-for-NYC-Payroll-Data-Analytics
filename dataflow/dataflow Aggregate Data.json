@@ -20,10 +20,17 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "union1"
+				},
+				{
+					"name": "filter1"
+				}
+			],
 			"scriptLines": [
 				"parameters{",
-				"     Fiscal Year as string",
+				"     fiscalyear as integer (2020)",
 				"}",
 				"source(output(",
 				"          FiscalYear as integer,",
@@ -58,7 +65,9 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> srcNYCHistory"
+				"     ignoreNoFilesFound: false) ~> srcNYCHistory",
+				"srcTableSqldbNycPayrollData, srcNYCHistory union(byName: true)~> union1",
+				"union1 filter(toInteger(FiscalYear) >= $dataflow_param_fiscalyear) ~> filter1"
 			]
 		}
 	}
